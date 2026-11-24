@@ -1,0 +1,10 @@
+# PyCharm
+.idea/
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# База данных SQLite
+*.db
+*.sqlite3
