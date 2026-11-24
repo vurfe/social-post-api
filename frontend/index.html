@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя стена — Мини-блог</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+        }
+        h1 { font-size: 24px; margin-top: 0; margin-bottom: 20px; color: #1a1a1a; }
+        h2 { font-size: 18px; margin-top: 0; margin-bottom: 16px; color: #1a1a1a; }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+        button:hover { background-color: #357abd; }
+        .result-box {
+            background: #f8f9fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .error { color: #d93025; border-color: #fce8e6; background: #fce8e6;}
+        .success { color: #188038; border-color: #e6f4ea; background: #e6f4ea; }
+        .search-btn { background-color: #555; }
+        .search-btn:hover { background-color: #333; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>Моя стена</h1>
+        <h2>Написать новый пост</h2>
+        <input id="author" placeholder="Ваше имя" value="Катя">
+        <textarea id="text" placeholder="Поделитесь мыслями..." rows="4"></textarea>
+        <button onclick="createPost()">Опубликовать</button>
+        <div id="result" class="result-box" style="display:none;"></div>
+    </div>
+
+    <div class="card">
+        <h2>Найти пост по ID</h2>
+        <input id="postId" type="number" placeholder="Введите ID поста">
+        <button onclick="getPost()" class="search-btn">Найти</button>
+        <div id="getResult" class="result-box" style="display:none;"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
